@@ -62,7 +62,8 @@ export function useZodValidation<T>(
     return !!errorsRef.current[field] && field in touchedFields;
   };
 
-  const getErrorMessage = (field: keyof T): string | undefined => errorsRef.current[field];
+  const getErrorMessage = (field: keyof T): string | undefined =>
+    errorsRef.current[field];
 
   const isFormInvalid = !schema.safeParse(data).success;
 
